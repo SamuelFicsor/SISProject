@@ -67,7 +67,7 @@ public class studentStatus
 				TPGrade = stringInput.nextLine(); // putting the input into the third grade variable 
 				
 				runSIS.listOfStudents.add(new Student(firstName, lastName, firstPeriod, FPGrade,
-													secondPeriod, SPGrade, thirdPeriod, TPGrade));
+													secondPeriod, SPGrade, thirdPeriod, TPGrade)); // setter for new student information
 				System.out.println("That student has been added");
 				runSIS.displayMenu();
 			}
