@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class studentStatus
 	{
 
-		static Scanner stringInput = new Scanner(System.in);
+		static Scanner stringInput = new Scanner(System.in); // getting information from the parents 
 	
 		static String firstName;
 		static String lastName;
@@ -43,28 +43,28 @@ public class studentStatus
 			{
 			//gains information for the students
 				System.out.println("What is the student's first name?");
-				firstName = stringInput.nextLine();
+				firstName = stringInput.nextLine(); // putting the input into the first name variable 
 				
 				System.out.println("Last name?");
-				lastName = stringInput.nextLine();
+				lastName = stringInput.nextLine(); // putting the input into the last name variable 
 				
 				System.out.println("What is the student's first period?");
-				firstPeriod = stringInput.nextLine();
+				firstPeriod = stringInput.nextLine(); // putting the input into the first period variable 
 				
 				System.out.println("First period grade?");
-				FPGrade = stringInput.nextLine();
+				FPGrade = stringInput.nextLine(); // putting the input into the first grade variable 
 				
 				System.out.println("Second period?");
-				secondPeriod = stringInput.nextLine();
+				secondPeriod = stringInput.nextLine(); // putting the input into the second period variable 
 				
 				System.out.println("Second period grade?");
-				SPGrade = stringInput.nextLine();
+				SPGrade = stringInput.nextLine(); // putting the input into the second grade variable 
 				
 				System.out.println("Third period?");
-				thirdPeriod = stringInput.nextLine();
+				thirdPeriod = stringInput.nextLine(); // putting the input into the third period variable 
 				
 				System.out.println("Third period grade?");
-				TPGrade = stringInput.nextLine();
+				TPGrade = stringInput.nextLine(); // putting the input into the third grade variable 
 				
 				runSIS.listOfStudents.add(new Student(firstName, lastName, firstPeriod, FPGrade,
 													secondPeriod, SPGrade, thirdPeriod, TPGrade));
