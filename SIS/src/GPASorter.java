@@ -11,6 +11,6 @@ public class GPASorter implements Comparator<Student>
 			else
 				{
 					return -1;
-				}
+				}//gpa sort
 		}
 	}
