@@ -1,8 +1,8 @@
 
-public class Student
+public class Student // POJO
 	{
 
-		private String firstname;
+		private String firstname; // private variables listing getters and setters
 		private String lastname;
 		private double gpa;
 		private String firstperiod;
@@ -12,7 +12,7 @@ public class Student
 		private String thirdperiod;
 		private String thirdgrade;
 		
-		public Student(String fn, String ln, String fp, String fg, String sp, String sg, String tp, String tg)
+		public Student(String fn, String ln, String fp, String fg, String sp, String sg, String tp, String tg) // connecting variables and private getters and setters
 		{
 		
 		firstname = fn;

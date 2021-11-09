@@ -208,7 +208,9 @@ public class GPACalcV2 {
 			cumGPA = cumGPA/3;
 			// I dont think this GPA calculator code works
 	        DecimalFormat d = new DecimalFormat("0.00");
+
 	        //System.out.println((d.format(cumGPA)));
+
 
 	        s.setGpa(cumGPA);
 	        

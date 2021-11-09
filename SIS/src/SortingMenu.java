@@ -14,6 +14,7 @@ public class SortingMenu
 					{
 						Collections.sort(runSIS.listOfStudents, new LastNameSorter());
 						runSIS.displayStudentList();
+						
 					}
 				else if(inputNum == 2)
 					{

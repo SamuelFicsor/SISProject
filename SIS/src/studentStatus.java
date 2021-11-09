@@ -5,6 +5,7 @@ public class studentStatus
 
 		static Scanner stringInput = new Scanner(System.in);
 		static Scanner intInput = new Scanner(System.in);
+
 	
 		static String firstName;
 		static String lastName;
@@ -39,15 +40,18 @@ public class studentStatus
 
 		public static void addStudents()
 			{
+
 				int inputNum;
 				String inputString;
 			
+
 				System.out.println("What is the student's first name?");
-				firstName = stringInput.nextLine();
+				firstName = stringInput.nextLine(); // putting the input into the first name variable 
 				
 				System.out.println("Last name?");
-				lastName = stringInput.nextLine();
+				lastName = stringInput.nextLine(); // putting the input into the last name variable 
 				
+
 				System.out.println("What is the student's first period?\n1) Algebra\n2) Biology\n3) English");
 						inputNum = intInput.nextInt();
 						switch(inputNum)
@@ -212,6 +216,7 @@ public class studentStatus
 				
 				GPACalcV2.GPACounter();
 				runSIS.listOfStudents.add(new Student(firstName, lastName, firstPeriod, FPGrade, secondPeriod, SPGrade, thirdPeriod, TPGrade));
+
 				runSIS.displayMenu();
 			}
 

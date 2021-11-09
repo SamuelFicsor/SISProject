@@ -22,10 +22,14 @@ public class runSIS
 
 					listOfStudents.add(new Student(filler[0],filler[1],filler[2],filler[3],filler[4],filler[5],filler[6],filler[7]));
 					}
-					GPACalcV2.GPACounter();
-					displayMenu();
-    }
-				
+						GPACalcV2.GPACounter(); // calling on GPA calculator
+						displayMenu(); // display beginning of the program
+					}
+			
+
+
+			
+
 				//displayStudentList();
 
 
@@ -63,13 +67,13 @@ public class runSIS
 					}
 				else if(userChoice == 5)
 				{
-					ShowingParentsGPA.showingParents();
+					ShowingParentsGPA.showingParents(); // display to parents the GPA of their kids
 				}
 				else
 					{
 						//#breakproof
-						System.out.println("You must pick either 1, 2 or 3");
-						displayMenu();
+						System.out.println("You must pick either 1, 2 or 3"); // if user input is not within the bounds of options
+						displayMenu(); // calling on menu again to make user input a viable option
 					}
 			}
 
@@ -85,6 +89,46 @@ public class runSIS
 						System.out.printf("%-8s %-2s" , " P2 " + s.getSecondperiod() , s.getSecondgrade());
 						System.out.printf("%-8s %-2s" , " P3 " + s.getThirdperiod() , s.getThirdgrade() + "\n");
 					} 
+				
+				// go back to menu option
+				// I'm like that
+				//this code might potentially maybe work
+				
+				
+				System.out.println("Where do you want to go next?");
+				System.out.println("(1) - Return to Main Menu");
+				System.out.println("(2) - Sort by another method");
+				
+				Scanner supa = new Scanner(System.in);
+				int supaanswer; 
+				supaanswer = supa.nextInt();
+				
+				// Option 1
+				
+				if(supaanswer == 1)
+					{
+						System.out.println("Returning to main menu...");
+						displayMenu();
+					}
+				
+				// Option 2
+				
+				else if (supaanswer == 2)
+					{
+						System.out.println("Going back to Sorter menu");
+						SortingMenu.sortingChoices();
+					}
+				
+				// Option 3
+				
+				else 
+					{
+						System.out.println("Returning to main menu...");
+						displayMenu();
+					}
+					
+				
+				
 			}
 
 	}

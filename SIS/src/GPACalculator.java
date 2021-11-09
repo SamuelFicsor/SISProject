@@ -19,11 +19,11 @@ public class GPACalculator
 			
 			// first class GPA
 			
-					if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A"))
+					if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A+"))
 						{
-							firstGPA = firstGPA + 4.00;
+							firstGPA = firstGPA + 4.30;
 						}
-					else if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A+"))
+					else if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A"))
 						{
 							firstGPA = firstGPA + 4.00;
 						}
@@ -85,11 +85,11 @@ public class GPACalculator
 			
 			//second class GPA
 					
-					if(runSIS.listOfStudents.get(i).getSecondgrade().equals("A"))
+					if(runSIS.listOfStudents.get(i).getSecondgrade().equals("A+"))
 						{
-							secondGPA = secondGPA + 4.00;
+							secondGPA = secondGPA + 4.30;
 						}
-					else if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A+"))
+					else if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A"))
 						{
 							firstGPA = firstGPA + 4.00;
 						}
@@ -152,11 +152,11 @@ public class GPACalculator
 			// third class GPA
 					
 					
-					if(runSIS.listOfStudents.get(i).getThirdgrade().equals("A"))
+					if(runSIS.listOfStudents.get(i).getThirdgrade().equals("A+")) // amount for GPA in each grade
 						{
-							thirdGPA = thirdGPA + 4.00;
+							thirdGPA = thirdGPA + 4.30;
 						}
-					else if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A+"))
+					else if(runSIS.listOfStudents.get(i).getFirstgrade().equals("A"))
 						{
 							firstGPA = firstGPA + 4.00;
 						}
@@ -215,10 +215,8 @@ public class GPACalculator
 							thirdGPA = thirdGPA + 0.00;
 						}
 					
-					cumGPA = firstGPA + secondGPA + thirdGPA;
+					cumGPA = firstGPA + secondGPA + thirdGPA; // adding together GPA of all three classes
 					
-					//cumGPA = cumGPA/3;
-					// I dont think this GPA calculator code works
 			        DecimalFormat d = new DecimalFormat("0.00");
 			        System.out.println((d.format(cumGPA)));
 			        runSIS.listOfStudents.get(i).setGpa(cumGPA);  
