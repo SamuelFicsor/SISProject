@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
+import java.util.Formatter;
 
 public class runSIS
 	{
@@ -28,7 +29,6 @@ public class runSIS
     }
 				
 				//displayStudentList();
-
 
 			
 		//menu is fixed
@@ -76,15 +76,18 @@ public class runSIS
 
 		//displayStudentList method displays students
 		public static void displayStudentList()
-
 			{
-				for(Student s : listOfStudents)
+				for(int i = 0 ; i < listOfStudents.size() ; i++)
 					{
-						System.out.printf("%18-s" , " Name " , s.getFirstname() + " " + s.getLastname());
-						System.out.printf("GPA: %.2f" , s.getGpa());
-						System.out.printf("%8-s %2-s" , " P1 " + s.getFirstperiod() , s.getFirstgrade());
-						System.out.printf("%8-s %2-s" , " P2 " + s.getSecondperiod() , s.getSecondgrade());
-						System.out.printf("%8-s %2-s" , " P3 " + s.getThirdperiod() , s.getThirdgrade()) + "\n";
+						System.out.printf("%18-s", listOfStudents.get(i).getFirstname() + " " 
+													+ listOfStudents.get(i).getLastname());
+						System.out.printf("%2-f", listOfStudents.get(i).getGpa());
+						System.out.printf("%8-s %2-s", listOfStudents.get(i).getFirstperiod() + 
+													listOfStudents.get(i).getFirstgrade());
+						System.out.printf("%8-s %2-s", listOfStudents.get(i).getSecondperiod() + 
+													listOfStudents.get(i).getSecondgrade());
+						System.out.printf("%8-s %2-s", listOfStudents.get(i).getThirdperiod() + 
+													listOfStudents.get(i).getThirdgrade() + "\n");
 					}
 			}
 
