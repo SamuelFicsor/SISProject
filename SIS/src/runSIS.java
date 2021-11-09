@@ -25,25 +25,18 @@ public class runSIS
 						GPACalcV2.GPACounter(); // calling on GPA calculator
 						displayMenu(); // display beginning of the program
 					}
-			
 
-
-			
-
-				//displayStudentList();
-
-
-			
 		//menu is fixed
 		public static void displayMenu()
 			{
 				Scanner userIntInput = new Scanner(System.in);
-				System.out.println("would you like to do?");
-				System.out.println("(1) - add or delete a student");
-				System.out.println("(2) - change student grades/schedule");
-				System.out.println("(3) - sort students");
-				System.out.println("(4) - display the students");
-				System.out.println("(5) - Show the parents a GPA");
+				System.out.println("What would you like to do?\n"
+						+ "1) Add or delete a student\n"
+						+ "2) Change student grades or schedule\n"
+						+ "3) Sort students\n"
+						+ "4) Display the students\n"
+						+ "5) Show parents a GPA\n"
+						+ "6) Quit");
 				int userChoice = userIntInput.nextInt();
 				if(userChoice == 1)
 					{
@@ -64,11 +57,17 @@ public class runSIS
 					{
 						//displays the student list
 						displayStudentList();
+						displayMenu();
 					}
 				else if(userChoice == 5)
-				{
-					ShowingParentsGPA.showingParents(); // display to parents the GPA of their kids
-				}
+					{
+						ShowingParentsGPA.showingParents(); // display to parents the GPA of their kids
+					}
+				else if(userChoice == 6)
+					{
+						System.out.println("Quitting...");
+						System.exit(0);
+					}
 				else
 					{
 						//#breakproof
@@ -79,56 +78,19 @@ public class runSIS
 
 		//displayStudentList method displays students
 		public static void displayStudentList()
-
 			{
+				int menuCounter = 1;
 				for(Student s : listOfStudents)
 					{
+						System.out.printf("%-4d" , menuCounter);
 						System.out.printf("%-8s %-12s" , s.getFirstname() , s.getLastname());
 						System.out.printf("GPA: %.2f" , s.getGpa());
 						System.out.printf("%-8s %-2s" , "  P1 " + s.getFirstperiod() , s.getFirstgrade());
 						System.out.printf("%-8s %-2s" , " P2 " + s.getSecondperiod() , s.getSecondgrade());
 						System.out.printf("%-8s %-2s" , " P3 " + s.getThirdperiod() , s.getThirdgrade() + "\n");
+						
+						menuCounter++;
 					} 
-				
-				// go back to menu option
-				// I'm like that
-				//this code might potentially maybe work
-				
-				
-				System.out.println("Where do you want to go next?");
-				System.out.println("(1) - Return to Main Menu");
-				System.out.println("(2) - Sort by another method");
-				
-				Scanner supa = new Scanner(System.in);
-				int supaanswer; 
-				supaanswer = supa.nextInt();
-				
-				// Option 1
-				
-				if(supaanswer == 1)
-					{
-						System.out.println("Returning to main menu...");
-						displayMenu();
-					}
-				
-				// Option 2
-				
-				else if (supaanswer == 2)
-					{
-						System.out.println("Going back to Sorter menu");
-						SortingMenu.sortingChoices();
-					}
-				
-				// Option 3
-				
-				else 
-					{
-						System.out.println("Returning to main menu...");
-						displayMenu();
-					}
-					
-				
-				
 			}
 
 	}

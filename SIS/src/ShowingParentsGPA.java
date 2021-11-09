@@ -9,11 +9,7 @@ public class ShowingParentsGPA {
 		Scanner userIntInput = new Scanner(System.in);
 		Scanner userStringInput = new Scanner(System.in);
 		System.out.println("These are the current students");
-		for(int i = 0; i < runSIS.listOfStudents.size(); i++)
-			{
-				//prints out student list
-				System.out.println("(" + (i + 1) + ") " + runSIS.listOfStudents.get(i).getLastname() + ", " + runSIS.listOfStudents.get(i).getFirstname());
-			}
+		runSIS.displayStudentList();
 		System.out.println("Which students GPA do you want to see");
 		int studentChoice = userIntInput.nextInt();
 	//gets the student and then adds to the GPA 
@@ -40,6 +36,7 @@ public class ShowingParentsGPA {
 				System.out.println((d.format(runSIS.listOfStudents.get(studentChoice - 1).getGpa())));
 			}
 			
+			runSIS.displayMenu();
 		}
 
 	

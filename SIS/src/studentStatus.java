@@ -53,30 +53,30 @@ public class studentStatus
 				
 
 				System.out.println("What is the student's first period?\n1) Algebra\n2) Biology\n3) English");
-						inputNum = intInput.nextInt();
-						switch(inputNum)
+				inputNum = intInput.nextInt();
+				switch(inputNum)
+				{
+					case 1:
 						{
-							case 1:
-								{
-									firstPeriod = "Algebra";
-									break;
-								}
-							case 2:
-								{
-									firstPeriod = "Biology";
-									break;
-								}
-							case 3:
-								{
-									firstPeriod = "English";
-									break;
-								}
-							default:
-								{
-									System.out.println("That is not a valid class...");
-									studentAction();
-								}
+							firstPeriod = "Algebra";
+							break;
 						}
+					case 2:
+						{
+							firstPeriod = "Biology";
+							break;
+						}
+					case 3:
+						{
+							firstPeriod = "English";
+							break;
+						}
+					default:
+						{
+							System.out.println("That is not a valid class...");
+							studentAction();
+						}
+				}
 				
 				System.out.println("First period grade?");
 				inputString = stringInput.nextLine();
@@ -213,28 +213,19 @@ public class studentStatus
 							studentAction();
 						}
 				}
-				
-				GPACalcV2.GPACounter();
+		
+		
 				runSIS.listOfStudents.add(new Student(firstName, lastName, firstPeriod, FPGrade, secondPeriod, SPGrade, thirdPeriod, TPGrade));
-
+				GPACalcV2.GPACounter();
 				runSIS.displayMenu();
 			}
 
 		public static void deleteStudents()
-			{
-				int menuCounter = 1;
-				for(Student s : runSIS.listOfStudents)
-					{
-						System.out.print(menuCounter + ") ");
-						System.out.println(s.getFirstname() + s.getLastname() + s.getFirstperiod() +
-											s.getFirstgrade() + s.getSecondperiod() + s.getSecondgrade() +
-											s.getThirdperiod() + s.getThirdgrade());
-						menuCounter++;
-					}
-				
+			{	
 				System.out.println("Which student would you like to delete?");
-				String deleteInput = stringInput.next() + 1;
-				
+				runSIS.displayStudentList();
+				int deleteInput = intInput.nextInt() - 1;
+				System.out.println(runSIS.listOfStudents.get(deleteInput).getFirstname() + " " + runSIS.listOfStudents.get(deleteInput).getLastname() + " has been deleted.");
 				runSIS.listOfStudents.remove(deleteInput);
 				
 				runSIS.displayMenu();
